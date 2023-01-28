@@ -28,5 +28,14 @@
       </div>
    </div>
 
-   <a href="{{ route('comics.index') }}" class="btn btn-primary my-3">Home</a>
+   <div class="controls d-flex align-items-center gap-3">
+
+      <a href="{{ route('comics.index') }}" class="btn btn-primary my-3">Home</a>
+      <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning my-3">Edit</a>
+      @include('comics.partials.deleteForm')
+
+   </div>
+
+
+   @include('comics.partials.deleteScript')
 @endsection

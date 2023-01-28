@@ -10,7 +10,7 @@
       <input type="text" name="title" class="form-control">
 
       <label class="form-label">Description: </label>
-      <input type="text" name="description" class="form-control">
+      <textarea name="description" id="" cols="30" rows="5" class="form-control"> </textarea>
 
       <label class="form-label">Thumb: </label>
       <input type="text" name="thumb" class="form-control" placeholder="null">
@@ -29,4 +29,6 @@
 
       <button type="submit" class="btn btn-success my-3">Send</button>
    </form>
+
+   <a href="{{ route('comics.index') }}" class="btn btn-primary">Home</a>
 @endsection

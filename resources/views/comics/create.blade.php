@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Add new comic')
+
 @section('content')
    <h1 class="mt-5">Add new comic</h1>
 

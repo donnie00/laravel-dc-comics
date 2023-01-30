@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Edit comic #' . $comic->id)
+
 @section('content')
    <h1 class="mt-5">Edit comic</h1>
 

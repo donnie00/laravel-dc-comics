@@ -1,4 +1,6 @@
-@extends('layouts.app');
+@extends('layouts.app')
+
+@section('title', 'Comic #' . $comic->id)
 
 @section('content')
    <h1 class="text-center my-5 text-primary">{{ $comic->title }}</h1>

@@ -9,6 +9,10 @@
       <a href="{{ route('comics.create') }}" class="btn btn-success fw-bold">&plus; Add new comic</a>
    </header>
 
+   @if (session('msg'))
+      @include('comics.partials.toaster', ['color' => 'warning'])
+   @endif
+
    <div class="row">
       @foreach ($comics as $comic)
          <div class="col-6 col-sm-4 col-md-3 g-3">

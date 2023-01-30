@@ -56,7 +56,7 @@ class ComicsController extends Controller
         $comic->fill($data);
         $comic->save();
 
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('comics.show', $comic->id)->with('msg', 'Added successfully!');
     }
 
     /**
@@ -95,7 +95,7 @@ class ComicsController extends Controller
         // Assegno i valori recuperati in data alle variabili e poi li salvo come con il save().
         $comic->update($data);
 
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('comics.show', $comic->id)->with('msg', 'Updated successfully!');
     }
 
     /**
@@ -108,6 +108,6 @@ class ComicsController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('msg', 'Deleted successfully!');
     }
 }

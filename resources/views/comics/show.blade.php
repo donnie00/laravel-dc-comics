@@ -5,6 +5,10 @@
 @section('content')
    <h1 class="text-center my-5 text-primary">{{ $comic->title }}</h1>
 
+   @if (session('msg'))
+      @include('comics.partials.toaster', ['color' => 'success'])
+   @endif
+
    <div class="row">
       <div class="col-auto">
          <img src="{{ $comic->thumb }}" alt="No img found" class="img-fluid">

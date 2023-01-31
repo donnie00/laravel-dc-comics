@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comic;
+use App\Http\Requests\StoreComicRequest;
 
 use Illuminate\Http\Request;
 
@@ -37,9 +38,9 @@ class ComicsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         $comic = new Comic();
 
@@ -53,7 +54,9 @@ class ComicsController extends Controller
 
         //Con il fill assegno direttamente i valori recuperati in data e li assegno a comic.
         //Per far si che questo funzioni, devo aggiungere il $fillable al model.
+
         $comic->fill($data);
+
         $comic->save();
 
         return redirect()->route('comics.show', $comic->id)->with('msg', 'Added successfully!');

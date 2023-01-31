@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
-
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 
 class ComicsController extends Controller
@@ -91,9 +91,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         // Assegno i valori recuperati in data alle variabili e poi li salvo come con il save().
         $comic->update($data);

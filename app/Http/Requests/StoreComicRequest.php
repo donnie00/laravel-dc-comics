@@ -27,7 +27,7 @@ class StoreComicRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'thumb' => 'nullable',
-            'price' => 'required|number',
+            'price' => 'required|numeric',
             'series' => 'required',
             'sale_date' => 'required|date',
             'type' => 'required'

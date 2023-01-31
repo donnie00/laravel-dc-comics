@@ -18,26 +18,54 @@
    <form action="{{ route('comics.store') }}" method="POST" class="p-5">
       @csrf
 
-      <label class="form-label">Title: </label>
-      <input type="text" name="title" class="form-control">
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'text',
+          'name' => 'title',
+          'label' => 'Title',
+      ])
 
-      <label class="form-label">Description: </label>
-      <textarea name="description" id="" cols="30" rows="5" class="form-control"> </textarea>
+      @include('comics.partials.formInput', [
+          'tag' => 'textarea',
+          'name' => 'description',
+          'label' => 'Description',
+      ])
 
-      <label class="form-label">Thumb: </label>
-      <input type="text" name="thumb" class="form-control" placeholder="null">
 
-      <label class="form-label">Price: </label>
-      <input type="number" step="0.01" name="price" class="form-control">
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'text',
+          'name' => 'thumb',
+          'label' => 'Thumb',
+      ])
 
-      <label class="form-label">Series: </label>
-      <input type="text" name="series" class="form-control">
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'number',
+          'name' => 'price',
+          'label' => 'Price',
+      ])
 
-      <label class="form-label">Sale date: </label>
-      <input type="date" name="sale_date" class="form-control">
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'text',
+          'name' => 'series',
+          'label' => 'Series',
+      ])
 
-      <label class="form-label">Type: </label>
-      <input type="text" name="type" class="form-control">
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'date',
+          'name' => 'sale_date',
+          'label' => 'Sale date',
+      ])
+
+      @include('comics.partials.formInput', [
+          'tag' => 'input',
+          'type' => 'text',
+          'name' => 'type',
+          'label' => 'Type',
+      ])
 
       <button type="submit" class="btn btn-success my-3">Send</button>
    </form>

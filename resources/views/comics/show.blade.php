@@ -6,7 +6,7 @@
    <h1 class="text-center my-5 text-primary">{{ $comic->title }}</h1>
 
    @if (session('msg'))
-      @include('comics.partials.toaster', ['color' => 'success'])
+      @include('comics.partials.toaster')
    @endif
 
    <div class="row">

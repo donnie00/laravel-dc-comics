@@ -10,7 +10,7 @@
    </header>
 
    @if (session('msg'))
-      @include('comics.partials.toaster', ['color' => 'warning'])
+      @include('comics.partials.toaster')
    @endif
 
    <div class="row">

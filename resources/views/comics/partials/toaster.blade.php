@@ -3,7 +3,7 @@
     'align-items-center',
     'my-3',
     'w-100',
-    'text-bg-' . $color,
+    'text-bg-' . session('color'),
     'show' => session('msg'),
 ]) role="alert" aria-live="assertive" aria-atomic="true">
    <div class="d-flex">
